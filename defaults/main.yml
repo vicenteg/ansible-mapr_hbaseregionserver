@@ -1,2 +1,7 @@
 ---
 # defaults file for mapr_hbaseregionserver
+
+hbase_version: 0.98.7
+hbase_build: 201501291259-1
+
+proxy_env: { }

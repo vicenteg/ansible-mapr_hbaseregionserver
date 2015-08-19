@@ -2,5 +2,6 @@
 # tasks file for mapr_hbaseregionserver
 
 - name: install mapr-hbase-regionserver
-  yum: name=mapr-hbase-regionserver state=present
-  notify: configure.sh -R
+  yum: name=mapr-hbase-regionserver-{{hbase_version}}.{{hbase_build}} state=present
+  environment: proxy_env
+  when: inventory_hostname in groups["regionserver"]
