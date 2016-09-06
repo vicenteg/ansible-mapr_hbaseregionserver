@@ -5,5 +5,5 @@
   become: yes
   become_user: root
   yum: name=mapr-hbase-regionserver-{{hbase_version}}.{{hbase_build}} state=present
-  environment: proxy_env
+  environment: '{{proxy_env}}'
   when: inventory_hostname in groups["regionserver"]
